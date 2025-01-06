@@ -1,8 +1,8 @@
 # Welcome to your Lovable project
 
-## Project info
+## Project author
 
-**URL**: https://lovable.dev/projects/918a76dc-30d7-4338-b362-a9f10b75d106
+Made by [WebGain](https://webgain.dk) for [Simons Japans guide til japansk valuta og betaling](https://simonsjapan.dk/planlaeg-din-rejse/valuta-og-betaling/)
 
 ## How can I edit this code?
 
