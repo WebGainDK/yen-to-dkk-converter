@@ -10,7 +10,7 @@ import { useQuery } from '@tanstack/react-query';
 type Currency = 'JPY' | 'DKK';
 
 export const CurrencyConverter = () => {
-  const [amount, setAmount] = useState<string>('');
+  const [amount, setAmount] = useState<string>('1000');
   const [fromCurrency, setFromCurrency] = useState<Currency>('JPY');
   const [toCurrency, setToCurrency] = useState<Currency>('DKK');
   const { toast } = useToast();
