@@ -33,8 +33,8 @@ export const CurrencyConverter = () => {
     if (convertedAmount) {
       navigator.clipboard.writeText(formatCurrency(convertedAmount, toCurrency));
       toast({
-        title: "Copied to clipboard",
-        description: "The converted amount has been copied to your clipboard.",
+        title: "Kopieret til udklipsholder",
+        description: "Det omregnede beløb er blevet kopieret til din udklipsholder.",
       });
     }
   };
@@ -42,19 +42,19 @@ export const CurrencyConverter = () => {
   return (
     <Card className="w-full max-w-md mx-auto p-6 space-y-6 animate-fade">
       <div className="space-y-2">
-        <label className="text-sm font-medium">Amount</label>
+        <label className="text-sm font-medium">Beløb</label>
         <Input
           type="number"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          placeholder="Enter amount"
+          placeholder="Indtast beløb"
           className="font-mono text-lg"
         />
       </div>
 
       <div className="flex items-center justify-between">
         <div className="space-y-2">
-          <p className="text-sm font-medium">From</p>
+          <p className="text-sm font-medium">Fra</p>
           <p className="font-mono text-lg">{fromCurrency}</p>
         </div>
 
@@ -68,7 +68,7 @@ export const CurrencyConverter = () => {
         </Button>
 
         <div className="space-y-2">
-          <p className="text-sm font-medium">To</p>
+          <p className="text-sm font-medium">Til</p>
           <p className="font-mono text-lg">{toCurrency}</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ export const CurrencyConverter = () => {
       <div className="pt-4 border-t">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-muted-foreground">Converted Amount</p>
+            <p className="text-sm font-medium text-muted-foreground">Omregnet beløb</p>
             <p className="font-mono text-2xl font-semibold animate-slide-up">
               {isLoading ? "..." : formatCurrency(convertedAmount || 0, toCurrency)}
             </p>
