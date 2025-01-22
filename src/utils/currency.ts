@@ -17,8 +17,20 @@ export const convertCurrency = async (
     const response = await fetch(
       `https://api.exchangerate-api.com/v4/latest/${from}`
     );
+    
+    if (!response.ok) {
+      console.error('Exchange rate API error:', response.status, response.statusText);
+      throw new Error('Failed to fetch exchange rate');
+    }
+    
     const data = await response.json();
     const rate = data.rates[to];
+    
+    if (!rate) {
+      console.error('No exchange rate found for', to);
+      throw new Error('Exchange rate not found');
+    }
+    
     return amount * rate;
   } catch (error) {
     console.error('Error fetching exchange rate:', error);
